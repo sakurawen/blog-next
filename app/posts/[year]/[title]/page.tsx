@@ -35,7 +35,7 @@ const components = {
   pre: ({ children }: PropsWithChildren) => children,
 };
 
-export function MDXPost({ post }: { post: Post }) {
+function MDXPost({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code);
   return (
     <article className='prose prose-zinc dark:prose-invert pb-16'>
