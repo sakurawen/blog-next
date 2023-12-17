@@ -1,27 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+  * {
+    @apply selection:bg-sky-900/10  selection:text-sky-950 dark:selection:bg-green-700/10 dark:selection:text-green-300;
+  }
+  body {
+    @apply text-[hsl(var(--foreground))];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  .hover-card {
+    @apply bg-zinc-50 hover:bg-zinc-100 hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:hover:ring-zinc-600;
+  }
+}
+
+.bg {
+  background-image: url('/zd.png');
+  background-size: contain;
+}
+
+.shiki {
+  @apply bg-[#f9f9f9] dark:bg-[#18181b];
+}
+
+.shiki .line > span {
+  @apply text-[var(--shiki-light)] dark:text-[var(--shiki-dark)];
 }
