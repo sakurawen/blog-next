@@ -11,7 +11,7 @@
     --foreground: 0 0% 98%;
   }
   * {
-    @apply selection:bg-sky-900/10  selection:text-sky-950 dark:selection:bg-green-700/10 dark:selection:text-green-300;
+    @apply selection:bg-blue-900/10  selection:text-blue-800 dark:selection:bg-green-700/10 dark:selection:text-green-300;
   }
   body {
     @apply text-[hsl(var(--foreground))];
