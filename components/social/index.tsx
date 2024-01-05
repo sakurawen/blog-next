@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const links = [
   {
-    name: 'twitter',
+    name: 'X',
     url: 'https://twitter.com/wenhouman',
     icon: Twitter,
   },
@@ -27,7 +27,7 @@ export function Social() {
           <Link
             key={link.name}
             href={link.url}
-            className='p-1 rounded-md hover-card cursor-default'
+            className='p-1 rounded-md  mix-blend-darken dark:mix-blend-exclusion  hover-card cursor-default'
             target='_blank'>
             <link.icon />
           </Link>

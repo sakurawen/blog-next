@@ -6,7 +6,7 @@ export function ThemeToggle() {
   if (theme === 'dark') {
     return (
       <button
-        className='cursor-default hover-card p-1 rounded-md'
+        className='cursor-default mix-blend-darken dark:mix-blend-exclusion hover-card p-1 rounded-md'
         onClick={() => setTheme('light')}>
         <Sun />
       </button>
@@ -14,7 +14,7 @@ export function ThemeToggle() {
   }
   return (
     <button
-      className='cursor-default hover-card p-1 rounded-md'
+      className='cursor-default mix-blend-darken dark:mix-blend-exclusion hover-card p-1 rounded-md'
       onClick={() => setTheme('dark')}>
       <Moon />
     </button>

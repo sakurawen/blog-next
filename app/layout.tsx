@@ -1,37 +1,12 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
+import { Navbar } from '~/components/navbar';
 import { ThemeProvider } from '~/components/provider/theme';
-
-const harmonySans = localFont({
-  src: [
-    {
-      path: '../public/fonts/harmonySans/HarmonyOS_Sans_SC_Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/harmonySans/HarmonyOS_Sans_SC_Bold.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/harmonySans/HarmonyOS_Sans_SC_Bold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/harmonySans/HarmonyOS_Sans_SC_Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  display: 'swap',
-});
+import { harmonySans } from './font';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Akumanoko',
-  description: '平平无奇小博客',
+  description: 'Akumanoko',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -58,7 +33,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           attribute='class'
           defaultTheme='system'
           disableTransitionOnChange>
-          {children}
+          <div className='p-2 relative min-h-screen'>
+            <div className='bg-[url(/noise.png)] opacity-[0.025] pointer-events-none absolute inset-0 bg-repeat bg-[182px,182px]' />
+            <div
+              className='amazing-rays opacity-40 bg-[url(/api/amazing-rays)] bg-no-repeat  mix-blend-exclusion pointer-events-none -z-10 absolute inset-0'
+              style={{
+                backgroundSize: '1589px 383px',
+                backgroundPosition: 'calc(50% - 140px) top',
+              }}
+            />
+            <Navbar />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

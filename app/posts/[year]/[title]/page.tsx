@@ -38,7 +38,7 @@ const components = {
 function MDXPost({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code);
   return (
-    <article className='prose prose-zinc dark:prose-invert pb-16'>
+    <article className='prose max-w-2xl prose-zinc dark:prose-invert pb-16'>
       <MDXContent components={components} />
     </article>
   );

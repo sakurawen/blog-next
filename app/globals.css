@@ -9,9 +9,10 @@
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+    background-color: rgb(5, 5, 5);
   }
   * {
-    @apply selection:bg-blue-900/10  selection:text-blue-800 dark:selection:bg-green-700/10 dark:selection:text-green-300;
+    @apply selection:bg-zinc-400/40  selection:text-white dark:selection:bg-white/60 dark:selection:text-black;
   }
   body {
     @apply text-[hsl(var(--foreground))];
@@ -20,7 +21,7 @@
 
 @layer utilities {
   .hover-card {
-    @apply bg-zinc-50 hover:bg-zinc-100 hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:hover:ring-zinc-600;
+    @apply bg-zinc-50  hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:ring-zinc-600;
   }
 }
 
@@ -35,4 +36,19 @@
 
 .shiki .line > span {
   @apply text-[var(--shiki-light)] dark:text-[var(--shiki-dark)];
+}
+
+@keyframes AmazingRaysRun {
+  0% {
+    filter: hue-rotate(540deg) saturate(7);
+  }
+  50% {
+  }
+  100% {
+    filter: hue-rotate(180deg) saturate(7);
+  }
+}
+.amazing-rays {
+  filter: hue-rotate(540deg) saturate(7);
+  animation: 20s AmazingRaysRun ease-out infinite;
 }
