@@ -1,33 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    background-color: rgb(5, 5, 5);
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
+}
+
+@layer base {
   * {
-    @apply selection:bg-zinc-400/40  selection:text-white dark:selection:bg-white/60 dark:selection:text-black;
+    @apply border-border;
   }
   body {
-    @apply text-[hsl(var(--foreground))];
+    @apply bg-background text-foreground;
   }
+}
+@layer components {
+  .text-blend {
+    @apply text-zinc-600  dark:text-zinc-400;
+  }
+  .text-blend-hover {
+    @apply hover:text-zinc-800 dark:hover:text-zinc-200;
+  }
+}
+
+* {
+  @apply selection:bg-zinc-600/40  selection:text-white dark:selection:bg-white/60 dark:selection:text-black;
+}
+
+body {
+  @apply text-[hsl(var(--foreground))];
 }
 
 @layer utilities {
   .hover-card {
-    @apply bg-zinc-50  hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:ring-zinc-600;
+    @apply bg-zinc-100/60 hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:ring-zinc-600;
   }
-}
-
-.bg {
-  background-image: url('/zd.png');
-  background-size: contain;
 }
 
 .shiki {

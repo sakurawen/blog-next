@@ -11,7 +11,7 @@ export function Section({
 }>) {
   return (
     <section className={clsx('space-y-2  mt-4 md:w-96', className)}>
-      {title && <h2 className='font-bold pl-1'>{title}</h2>}
+      {title && <h2 className='font-bold'>{title}</h2>}
       {children}
     </section>
   );
