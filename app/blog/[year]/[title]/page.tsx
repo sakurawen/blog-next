@@ -20,7 +20,12 @@ export default async function Article({
   const id = `${year}/${title}.mdx`;
   const article = findArticleById(id);
   if (article === undefined) return notFound();
-  const count = await redis.incr(article.title);
+  let count = 0;
+  if (process.env.NODE_ENV === 'production') {
+    count = await redis.incr(article._id);
+  } else {
+    count = (await redis.get(article._id)) || 0;
+  }
   return (
     <div className='space-y-6 mt-6'>
       <h1 className='font-bold text-3xl'>{article.title}</h1>
