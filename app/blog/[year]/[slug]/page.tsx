@@ -3,6 +3,24 @@ import { format } from 'date-fns';
 import { notFound } from 'next/navigation';
 import { redis } from '~/app/upstash';
 import { MDXArticle } from './article';
+import { Metadata } from 'next';
+
+export function generateStaticParams() {
+  return allArticles.map((a) => {
+    return {
+      year: '' + new Date(a.date).getFullYear(),
+      slug: a._id,
+    };
+  });
+}
+
+export function generateMetadata() {
+  return allArticles.map((a) => {
+    return {
+      title: `${a.title} - Akumanoko`,
+    };
+  });
+}
 
 function findArticleById(id: string) {
   return allArticles.find((article) => article._id === id);
@@ -13,11 +31,11 @@ export default async function Article({
 }: {
   params: {
     year: string;
-    title: string;
+    slug: string;
   };
 }) {
-  const { year, title } = params;
-  const id = `${year}/${title}.mdx`;
+  const { year, slug } = params;
+  const id = `${year}/${slug}.mdx`;
   const article = findArticleById(id);
   if (article === undefined) return notFound();
   let count = 0;
