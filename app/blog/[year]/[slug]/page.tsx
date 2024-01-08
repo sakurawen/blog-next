@@ -3,13 +3,12 @@ import { format } from 'date-fns';
 import { notFound } from 'next/navigation';
 import { redis } from '~/app/upstash';
 import { MDXArticle } from './article';
-import { Metadata } from 'next';
 
 export function generateStaticParams() {
   return allArticles.map((a) => {
     return {
       year: '' + new Date(a.date).getFullYear(),
-      slug: a._id,
+      slug: a.slug,
     };
   });
 }
@@ -38,12 +37,14 @@ export default async function Article({
   const id = `${year}/${slug}.mdx`;
   const article = findArticleById(id);
   if (article === undefined) return notFound();
+
   let count = 0;
   if (process.env.NODE_ENV === 'production') {
     count = await redis.incr(article._id);
   } else {
     count = (await redis.get(article._id)) || 0;
   }
+  
   return (
     <div className='space-y-6 mt-6'>
       <h1 className='font-bold text-3xl'>{article.title}</h1>
