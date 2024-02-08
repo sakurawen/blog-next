@@ -1,6 +1,6 @@
 'use client';
 import { PropsWithChildren, use } from 'react';
-import { codeToHtml } from 'shikiji';
+import { codeToHtml } from 'shiki';
 
 async function highligh(code: string, language: string) {
   return codeToHtml(code, {
