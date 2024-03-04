@@ -11,7 +11,7 @@ export function GET() {
           transformOrigin:"center center",
           transform: 'rotate(-27deg) translateX(-10px)',
           opacity: 0.35,
-          marginTop: -112,
+          marginTop: -142,
           gap:1,
           marginBottom: 40,
           filter:"saturate(8.3)"
@@ -43,8 +43,8 @@ export function GET() {
       </div>
     ),
     {
-      width: 340,
-      height: 240,
+      width: 300,
+      height: 180,
     }
   );
 }

@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 className='amazing-rays opacity-50 dark:opacity-50 bg-[url(/api/amazing-rays)] bg-no-repeat  mix-blend-exclusion pointer-events-none -z-10 absolute inset-0'
                 style={{
                   backgroundSize: '1589px 423px',
-                  backgroundPosition: 'calc(50% - 90px) top',
+                  backgroundPosition: 'calc(50% - 140px) top',
                 }}
               />
               <Navbar />
