@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           defaultTheme='system'
           disableTransitionOnChange>
           <ScrollArea className='h-screen'>
-            <div className='p-2 relative min-h-screen'>
+            <div className='p-6 pb-24 md:p-2 relative min-h-screen'>
               <div className='bg-[url(/noise.png)] opacity-[0.025] pointer-events-none absolute inset-0 bg-repeat bg-[182px,182px]' />
               <div
                 className='amazing-rays opacity-50 dark:opacity-50 bg-[url(/api/amazing-rays)] bg-no-repeat  mix-blend-exclusion pointer-events-none -z-10 absolute inset-0'
