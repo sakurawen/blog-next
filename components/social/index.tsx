@@ -27,7 +27,7 @@ export function Social() {
           <Link
             key={link.name}
             href={link.url}
-            className='p-1 rounded-md  mix-blend-darken dark:mix-blend-exclusion  hover-card cursor-default'
+            className='p-1.5 md:p-1   rounded-md  mix-blend-darken dark:mix-blend-exclusion  hover-card cursor-default'
             target='_blank'>
             <link.icon />
           </Link>

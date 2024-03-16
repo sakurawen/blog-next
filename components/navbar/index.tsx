@@ -10,9 +10,6 @@ export function Navbar() {
             Akumanoko
           </Link>
         </h2>
-        <nav className='text-blend text-blend-hover mix-blend-luminosity'>
-          <Link href='/blog'>Blog</Link>
-        </nav>
       </div>
     </header>
   );

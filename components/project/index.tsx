@@ -10,7 +10,7 @@ export async function Projects() {
         key={project.node.name}
         href={project.node.url}
         target='_blank'
-        className='cursor-default hover-card rounded-md p-2 block'>
+        className='cursor-default hover-card rounded-md p-3 md:p-2 block'>
         <div>
           <p>{project.node.name}</p>
           <p className='text-zinc-400 dark:text-zinc-600 text-xs'>{project.node.description}</p>

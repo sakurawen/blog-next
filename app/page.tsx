@@ -8,12 +8,8 @@ import { ThemeToggle } from '~/components/theme-toggle';
 export default function Home() {
   return (
     <main className='max-w-2xl mx-auto relative md:space-y-8 space-y-4'>
-      <div className='my-16 space-y-4 mix-blend-luminosity'>
+      <div className='mt-16 space-y-4 mix-blend-luminosity'>
         <h1 className={clsx('text-2xl inline-block font-black', 'dark:text-white')}>Hey,I&apos;m wen</h1>
-        <div className='flex space-x-4 !mt-6'>
-          <Social />
-          <ThemeToggle />
-        </div>
         <p className=' text-blend leading-8'>
           我一直以为，我的梦想就是一只帆船
           <br />
@@ -30,7 +26,11 @@ export default function Home() {
           一件都没有带走
         </p>
       </div>
-      <Section title='Pinned Projects'>
+      <div className='flex space-x-4 '>
+        <Social />
+        <ThemeToggle />
+      </div>
+      <Section className='mt-1 space-y-2' title='Pinned Projects'>
         <Projects />
       </Section>
       <Section title='Articles'>

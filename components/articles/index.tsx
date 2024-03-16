@@ -6,15 +6,15 @@ const sortArticles = allArticles.sort((a, b) => compareDesc(new Date(a.date), ne
 
 export async function Articles() {
   return (
-    <ul className='space-y-2 mt-2'>
+    <ul className='space-y-4 mt-2'>
       {sortArticles.sort().map((article) => {
         return (
           <Link
             key={article._id}
             href={article.url}
             className='block  cursor-default '>
-            <li className='cursor-default block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300'>
-              <p className='text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
+            <li className='cursor-default block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300 space-y-1'>
+              <p className='text-base md:text-sm text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
               <p className='text-xs text-zinc-400 dark:text-zinc-700'>{format(new Date(article.date), 'yyyy-MM-dd')}</p>
             </li>
           </Link>
