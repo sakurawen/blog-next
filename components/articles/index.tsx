@@ -14,7 +14,7 @@ export async function Articles() {
             href={article.url}
             className='block  cursor-default '>
             <li className='cursor-default block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300 space-y-1'>
-              <p className='text-base md:text-sm text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
+              <p className='text-base md:text-lg text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
               <p className='text-xs text-zinc-400 dark:text-zinc-700'>{format(new Date(article.date), 'yyyy-MM-dd')}</p>
             </li>
           </Link>
