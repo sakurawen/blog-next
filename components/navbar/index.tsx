@@ -5,7 +5,6 @@ export function Navbar() {
       <div className='flex items-center'>
         <h2 className='font-bold text-base mix-blend-luminosity mr-4'>
           <Link
-            scroll={false}
             href='/'
             className='text-xl'>
             Akumanoko

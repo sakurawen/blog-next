@@ -87,7 +87,8 @@
   @apply selection:bg-zinc-600/40  selection:text-white dark:selection:bg-white/60 dark:selection:text-black;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
