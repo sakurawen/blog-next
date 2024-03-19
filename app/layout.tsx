@@ -3,6 +3,7 @@ import { Navbar } from '~/components/navbar';
 import { ThemeProvider } from '~/components/provider/theme';
 import { harmonySans } from './font';
 import './globals.css';
+import { FixScroll } from '~/components/fix-scroll';
 
 export const metadata: Metadata = {
   title: 'Akumanoko',
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 }}
               />
               <Navbar />
+              <FixScroll/>
               {children}
             </div>
         </ThemeProvider>
