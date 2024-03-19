@@ -6,6 +6,7 @@ export function ThemeToggle() {
   if (theme === 'dark') {
     return (
       <button
+        aria-label='theme-toggle'
         className='p-1.5 md:p-1  cursor-default mix-blend-darken dark:mix-blend-exclusion hover-card  rounded-md'
         onClick={() => setTheme('light')}>
         <Sun />
@@ -14,6 +15,7 @@ export function ThemeToggle() {
   }
   return (
     <button
+      aria-label='theme-toggle'
       className='p-1.5 md:p-1  cursor-default mix-blend-darken dark:mix-blend-exclusion hover-card  rounded-md'
       onClick={() => setTheme('dark')}>
       <Moon />
