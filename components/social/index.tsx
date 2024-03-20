@@ -1,5 +1,8 @@
+'use client';
 import { Twitter, Github, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { ThemeToggle } from '../theme-toggle';
+import { useIsClient } from 'foxact/use-is-client';
 
 const links = [
   {
@@ -20,6 +23,8 @@ const links = [
 ];
 
 export function Social() {
+  const isClient = useIsClient();
+  if (!isClient) return null;
   return (
     <>
       {links.map((link) => {
@@ -29,12 +34,12 @@ export function Social() {
             href={link.url}
             className='p-1.5 md:p-1 rounded-md  mix-blend-darken dark:mix-blend-exclusion  hover-card cursor-default'
             target='_blank'
-            aria-label={link.name}
-            >
+            aria-label={link.name}>
             <link.icon />
           </Link>
         );
       })}
+      <ThemeToggle />
     </>
   );
 }
