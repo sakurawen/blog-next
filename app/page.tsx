@@ -28,7 +28,7 @@ export default function Home() {
   const signIndex = Math.floor(Math.random() * signs.length);
   return (
     <main className='max-w-2xl mx-auto relative md:space-y-8 space-y-4'>
-      <div className='mt-16 space-y-4 mix-blend-luminosity'>
+      <div className='mt-16 space-y-4'>
         <h1 className={clsx('text-2xl inline-block font-mono font-black', 'dark:text-white')}>Hey, I&apos;m wen</h1>
         <div className='relative text-blend leading-8'>
           <Sign>{signs[signIndex]}</Sign>

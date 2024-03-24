@@ -47,10 +47,10 @@ export default async function Article({
   
   return (
     <div className='space-y-6 mt-6'>
-      <h1 className='font-bold text-3xl'>{article.title}</h1>
+      <h1 className='font-bold text-4xl'>{article.title}</h1>
       <p className='flex space-x-8'>
-        <span className='text-sm'>发布日期：{format(new Date(article.date), 'yyyy-MM-dd')}</span>
-        <span className='text-sm'>点击次数:{count}</span>
+        <span className='text-base'>发布日期：{format(new Date(article.date), 'yyyy-MM-dd')}</span>
+        <span className='text-base'>点击次数:{count}</span>
       </p>
       <MDXArticle article={article} />
     </div>

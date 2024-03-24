@@ -98,7 +98,7 @@ body {
 
 @layer utilities {
   .hover-card {
-    @apply bg-zinc-100/60 hover:ring-1 hover:ring-zinc-200 dark:bg-zinc-900 dark:hover:ring-zinc-600;
+    @apply -ml-2 hover:bg-zinc-100/60 hover:ring-1 hover:ring-zinc-200  dark:hover:bg-zinc-900 dark:hover:ring-zinc-600;
   }
 }
 

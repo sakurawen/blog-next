@@ -12,7 +12,7 @@ const components = {
 export function MDXArticle({ article }: { article: Article }) {
   const MDXContent = useMDXComponent(article.body.code);
   return (
-    <article className='prose max-w-2xl prose-zinc dark:prose-invert pb-16'>
+    <article className='prose max-w-2xl prose-lg prose-zinc dark:prose-invert pb-16'>
       <MDXContent components={components} />
     </article>
   );

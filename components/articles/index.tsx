@@ -11,12 +11,12 @@ export async function Articles() {
         return (
           <li
             key={article._id}
-            className='cursor-default block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300 space-y-1'>
+            className='cursor-default hover-card rounded-lg  px-2 py-1.5 block'>
             <Link
               href={article.url}
               className='block  cursor-default '>
-              <p className='text-base md:text-lg text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
-              <p className='text-xs text-zinc-400 dark:text-zinc-700'>{format(new Date(article.date), 'yyyy-MM-dd')}</p>
+              <p className='text-base  text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
+              <p className='text-zinc-400  text-sm'>{format(new Date(article.date), 'yyyy-MM-dd')}</p>
             </Link>
           </li>
         );
