@@ -10,8 +10,10 @@ const signs = [
   正安心享受旅行的时候，却突然发现它并不能行驶的很远
   很快，船就沉了
   我不知道自己应该是庆幸还是懊悔
-  庆幸的是，在发现问题后我很快就逃离了出来
-  而懊悔的是，我把很多美好的东西都留在了船上
+  庆幸的是，
+  在发现问题后我很快就逃离了出来
+  而懊悔的是，
+  我把很多美好的东西都留在了船上
   一件都没有带走`,
   `如果你是因为幻想着新生活的美好而移民
   那你将必然失望
@@ -31,7 +33,7 @@ export default function Home() {
       <div className='mt-16 space-y-4'>
         <h1 className={clsx('text-2xl inline-block font-mono font-black', 'dark:text-white')}>Hey, I&apos;m wen</h1>
         <div className='relative text-blend leading-8'>
-          <Sign>{signs[signIndex]}</Sign>
+          <Sign>{signs[0]}</Sign>
         </div>
       </div>
       <div className='flex space-x-4 '>
