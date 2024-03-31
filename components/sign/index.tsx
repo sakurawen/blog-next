@@ -8,7 +8,7 @@ export function Sign(props: PropsWithChildren) {
   if (!isClient) return <div className='h-36' />;
 
   return (
-    <div className='p-2 -ml-2 hover:bg-zinc-100/20 hover:backdrop-blur  dark:hover:bg-zinc-500/10  hover:shadow rounded-lg w-fit'>
+    <div className='p-2 -ml-2 cursor-default select-none hover:bg-zinc-300/20 hover:backdrop-blur hover:ring-1 dark:ring-zinc-800/80 ring-zinc-200/60  dark:hover:bg-zinc-500/10  rounded-lg w-fit'>
       <div className='sign mix-blend-luminosity relative'>
         <p className='text-lg  leading-loose whitespace-pre-line w-full absolute top-t left-0 '>
           <Typeit>{props.children}</Typeit>

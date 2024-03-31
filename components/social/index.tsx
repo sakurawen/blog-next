@@ -1,6 +1,8 @@
 'use client';
-import { Twitter, Github, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { Mail } from 'lucide-react';
+import { Github } from './icons/github';
+import { X } from './icons/x';
 import { ThemeToggle } from '../theme-toggle';
 import { useIsClient } from 'foxact/use-is-client';
 
@@ -8,7 +10,7 @@ const links = [
   {
     name: 'X',
     url: 'https://twitter.com/wenhouman',
-    icon: Twitter,
+    icon: X,
   },
   {
     name: 'github',
