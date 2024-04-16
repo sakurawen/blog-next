@@ -1,5 +1,5 @@
 import { allArticles } from 'contentlayer/generated';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { format, compareDesc } from 'date-fns';
 
 const sortArticles = allArticles.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
@@ -15,7 +15,13 @@ export async function Articles() {
             <Link
               href={article.url}
               className='block  cursor-default '>
-              <p className='text-base  text-ellipsis overflow-hidden whitespace-nowrap '>{article.title}</p>
+              <p
+                style={{
+                  viewTransitionName: article.slug,
+                }}
+                className='text-base  text-ellipsis overflow-hidden whitespace-nowrap'>
+                {article.title}
+              </p>
               <p className='text-zinc-400  text-sm'>{format(new Date(article.date), 'yyyy-MM-dd')}</p>
             </Link>
           </li>

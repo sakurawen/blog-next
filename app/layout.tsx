@@ -4,6 +4,7 @@ import { ThemeProvider } from '~/components/provider/theme';
 import { harmonySans } from './font';
 import './globals.css';
 import { FixScroll } from '~/components/fix-scroll';
+import { ViewTransitions } from 'next-view-transitions';
 
 export const metadata: Metadata = {
   title: 'Akumanoko',
@@ -12,28 +13,29 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang='zh-CN'
-      suppressHydrationWarning>
-      <head>
-        <link
-          rel='icon'
-          href='/favicon.ico'
-        />
-        <meta
-          name='description'
-          content='akumanoko'
-        />
-        <meta
-          content='width=device-width, initial-scale=1'
-          name='viewport'
-        />
-      </head>
-      <body className={harmonySans.className}>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          disableTransitionOnChange>
+    <ViewTransitions>
+      <html
+        lang='zh-CN'
+        suppressHydrationWarning>
+        <head>
+          <link
+            rel='icon'
+            href='/favicon.ico'
+          />
+          <meta
+            name='description'
+            content='akumanoko'
+          />
+          <meta
+            content='width=device-width, initial-scale=1'
+            name='viewport'
+          />
+        </head>
+        <body className={harmonySans.className}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            disableTransitionOnChange>
             <div className='p-6 pb-24 md:p-2 relative min-h-screen'>
               <div className='bg-[url(/noise.png)] opacity-[0.025] pointer-events-none absolute inset-0 bg-repeat bg-[182px,182px]' />
               <div
@@ -43,11 +45,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 }}
               />
               <Navbar />
-              <FixScroll/>
+              <FixScroll />
               {children}
             </div>
-        </ThemeProvider>
-      </body>
-    </html>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
